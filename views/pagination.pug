@@ -1,0 +1,13 @@
+nav(aria-label="Page navigation")
+  ul.pagination
+    - var n = 0;
+    while n < pages
+      - var pageCount = ++n
+      - var path = url + '?page=' + pageCount
+      - var active = (!isNaN(page) && page == n)
+      if active
+        li.active
+          a(href=path) #{n}
+      else
+        li
+          a(href=path) #{n}

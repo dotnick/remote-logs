@@ -1,0 +1,20 @@
+tr.debug td {
+  background-color: #CFD8DC;
+}
+
+* {
+  /*font-family: 'Rubik', sans-serif;*/
+  font-family: 'Open Sans', sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+#log-table th {
+  background-color: #2c3e50;
+  color: #fff;
+  font-weight: 700;
+
+}
+
+#log-table{
+  font-size: 13px;
+}

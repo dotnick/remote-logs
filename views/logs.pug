@@ -1,0 +1,39 @@
+extends layout
+
+block content
+    div
+        div
+            nav.navbar.navbar-inverse
+                ul.nav.navbar-nav
+                    |<li class="active"><a href="/logs">Logs<span class="sr-only">(current)</span></a></li>
+        .br
+        div
+          p
+            p
+
+                table.table.table-bordered.table-responsive#log-table.table-hover
+                  tr
+                            th ID
+                            th Type
+                            th Message
+                            th Created at
+                            th Device
+
+                  each log in logs
+                    if log.type == 'debug'
+                      tr.debug
+                        include log-row.pug
+                    else if log.type == 'info'
+                      tr.info
+                        include log-row.pug
+                    else if log.type == 'warning'
+                      tr.warning
+                        include log-row.pug
+                    else if log.type == 'error'
+                      tr.danger
+                        include log-row.pug
+                    else if log.type == 'assert'
+                      tr.info
+                        include log-row.pug
+    if(pages > 1)
+      include pagination.pug
